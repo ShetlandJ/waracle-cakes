@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App';
 import CakeDetail from './cakedetail';
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 import { render } from 'react-dom'
 
 import './index.css';
@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 
 render((
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={App}/>
     <Route path="/detail/:id" component={CakeDetail}/>
   </Router>

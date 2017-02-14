@@ -1,15 +1,20 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, browserHistory} from 'react-router';
+import './cakelistitem.css';
 
 var CakeListItem = React.createClass({
-
-  render() {
+  handleClick() {
     var detailLink = "/detail/" + this.props.id;
 
+    console.log('Redirect to ' + detailLink);
+    browserHistory.push(detailLink);
+  },
+
+  render() {
     return (
-        <div className="row">
-          <div className="col-md-3"><Link to={detailLink}><img src={this.props.imageUrl} alt={this.props.name} width="200" /></Link></div>
-          <div className="col-md-9"><Link to={detailLink}><h4>{this.props.name}</h4></Link></div>
+        <div className="row cakelistitemrow" onClick={this.handleClick}>
+          <div className="col-md-3"><img src={this.props.imageUrl} alt={this.props.name} width="200" /></div>
+          <div className="col-md-9"><h4>{this.props.name}</h4></div>
         </div>
     );
   }
