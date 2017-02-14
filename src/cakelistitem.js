@@ -1,12 +1,10 @@
 import React from 'react';
-import {Link, browserHistory} from 'react-router';
+import {browserHistory} from 'react-router';
 import './cakelistitem.css';
 
 var CakeListItem = React.createClass({
   handleClick() {
     var detailLink = "/detail/" + this.props.id;
-
-    console.log('Redirect to ' + detailLink);
     browserHistory.push(detailLink);
   },
 

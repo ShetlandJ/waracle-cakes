@@ -1,5 +1,6 @@
 import React from 'react';
 import request from 'request';
+import {Link} from 'react-router';
 import CakeListItem from './cakelistitem';
 import Settings from './settings';
 
@@ -23,6 +24,7 @@ module.exports = React.createClass({
     return (
         <div className="container">
             <h3>Cakes</h3>
+            <Link to="/add">Add Cake</Link>
             {cakes}
         </div>
     );
