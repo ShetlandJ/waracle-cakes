@@ -10,8 +10,13 @@ module.exports = React.createClass({
 
   componentWillMount() {
       request(Settings.apiUrl + this.props.params.id, function(error, response, body) {
-            var result = JSON.parse(body);
-            this.setState({cake: result});
+          if (error) {
+            alert('A problem occurred fetching the data');
+            return;
+          }
+          
+          var result = JSON.parse(body);
+          this.setState({cake: result});
         }.bind(this));
   },
 

@@ -11,8 +11,13 @@ module.exports = React.createClass({
 
   componentWillMount() {
       request(Settings.apiUrl, function(error, response, body) {
-            var result = JSON.parse(body);
-            this.setState({cakes: result});
+          if (error) {
+              alert('A problem occurred fetching the data');
+              return;
+          }
+          
+          var result = JSON.parse(body);
+          this.setState({cakes: result});
         }.bind(this));
   },
 
@@ -23,8 +28,11 @@ module.exports = React.createClass({
 
     return (
         <div className="container">
-            <h3>Cakes</h3>
-            <Link to="/add">Add Cake</Link>
+            <div className="row">
+                <div className="col-md-2"><Link to="/add" className="btn btn-primary">Add Cake</Link></div>
+                <div className="col-md-10"><h1>Cakes</h1></div>
+            </div>
+
             {cakes}
         </div>
     );

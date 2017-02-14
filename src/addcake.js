@@ -46,6 +46,10 @@ class AddCake extends React.Component {
     event.preventDefault();
   }
 
+  handleCancel(event) {
+      browserHistory.push('/');
+  }
+
   render() {
     return (
       <div className="container">
@@ -73,9 +77,9 @@ class AddCake extends React.Component {
                     <option value="5">5</option>
                 </select></div>
             </div>
-            <div className="row form-group">
+            <div className="row">
                 <div className="col-md-2"></div>
-                <div className="col-md-10"><input type="submit" value="Add" className="btn btn-default"></input></div>
+                <div className="col-md-10"><input type="submit" value="Add" className="btn btn-primary"></input><button className="btn btn-default" onClick={this.handleCancel}>Cancel</button></div>
             </div> 
           </form>
       </div>

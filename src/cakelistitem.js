@@ -11,8 +11,8 @@ var CakeListItem = React.createClass({
   render() {
     return (
         <div className="row cakelistitemrow" onClick={this.handleClick}>
-          <div className="col-md-3"><img src={this.props.imageUrl} alt={this.props.name} width="200" /></div>
-          <div className="col-md-9"><h4>{this.props.name}</h4></div>
+          <div className="col-md-2"><img src={this.props.imageUrl} alt={this.props.name} width="100" /></div>
+          <div className="col-md-10"><h4>{this.props.name}</h4></div>
         </div>
     );
   }
