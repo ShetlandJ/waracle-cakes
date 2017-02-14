@@ -11,7 +11,7 @@ class App extends Component {
           <h3>John Pollard (<a href="mailto:johnp@bravelocation.com" className="App-Header-MailLink">johnp@bravelocation.com</a>)</h3>
         </div>
 
-        <Cakes url="http://52.31.91.48:5000/api/cakes" />
+        <Cakes />
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import request from 'request';
-import Cake from './cake';
+import CakeListItem from './cakelistitem';
+import Settings from './settings';
 
 module.exports = React.createClass({
   getInitialState() {
@@ -8,16 +9,16 @@ module.exports = React.createClass({
   },
 
   componentWillMount() {
-      request(this.props.url, function(error, response, body) {
+      request(Settings.apiUrl, function(error, response, body) {
             var result = JSON.parse(body);
             this.setState({cakes: result});
         }.bind(this));
   },
 
   render() {
-      var cakes = this.state.cakes.map(function(cake) {
-            return <Cake key={cake.id} id={cake.id} name={cake.name} comment={cake.comment} imageUrl={cake.imageUrl} yumFactor={cake.yumFactor} />;
-        });
+    var cakes = this.state.cakes.map(function(cake) {
+        return <CakeListItem key={cake.id} id={cake.id} name={cake.name} comment={cake.comment} imageUrl={cake.imageUrl} yumFactor={cake.yumFactor} />;
+    });
 
     return (
         <div className="container">
