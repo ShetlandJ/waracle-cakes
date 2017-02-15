@@ -28,7 +28,16 @@ module.exports = React.createClass({
     }
 
     return (
+
+
       <div className="container">
+        <div className="App">
+          <div className="App-header">
+            <h2>Waracle Cakes Demo</h2>
+            <h3>John Pollard (<a href="mailto:johnp@bravelocation.com" className="App-Header-MailLink">johnp@bravelocation.com</a>)</h3>
+          </div>
+        </div>
+
         <div className="row">
           <div className="col-md-3"><img src={this.state.cake.imageUrl} alt={this.state.cake.name} width="200" /></div>
           <div className="col-md-9">

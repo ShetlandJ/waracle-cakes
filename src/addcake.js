@@ -53,6 +53,13 @@ class AddCake extends React.Component {
   render() {
     return (
       <div className="container">
+          <div className="App">
+            <div className="App-header">
+                <h2>Waracle Cakes Demo</h2>
+                <h3>John Pollard (<a href="mailto:johnp@bravelocation.com" className="App-Header-MailLink">johnp@bravelocation.com</a>)</h3>
+            </div>
+          </div>
+
           <h1>Add Cake</h1>
           <form onSubmit={this.handleSubmit}>
             <div className="row form-group">

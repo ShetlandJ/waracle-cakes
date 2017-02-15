@@ -3,6 +3,7 @@ import request from 'request';
 import {Link} from 'react-router';
 import CakeListItem from './cakelistitem';
 import Settings from './settings';
+import './cakes.css';
 
 module.exports = React.createClass({
   getInitialState() {
@@ -28,12 +29,19 @@ module.exports = React.createClass({
 
     return (
         <div className="container">
-            <div className="row">
-                <div className="col-md-2"><Link to="/add" className="btn btn-primary">Add Cake</Link></div>
-                <div className="col-md-10"><h1>Cakes</h1></div>
-            </div>
+            <table className="table table-striped">
+                <thead>
+                    <tr>
+                        <th><Link to="/add" className="btn btn-primary">Add Cake</Link></th>
+                        <th><h1>Cakes</h1></th>
+                    </tr>
+                </thead>
 
-            {cakes}
+
+                <tbody>
+                {cakes}
+                </tbody>
+            </table>
         </div>
     );
   }
